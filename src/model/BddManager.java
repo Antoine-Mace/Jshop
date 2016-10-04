@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class BddManager {
 	/**
-	 * Call this function if you want speak with the DB
+	 * Call this function if you want to communicate with the Database
 	 * @param query
 	 * @param type
 	 * @throws ClassNotFoundException
@@ -22,7 +22,7 @@ public class BddManager {
 		try
 		{
 			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://62.210.238.5:3306/JWeb", "root", "22121994");
+			con = DriverManager.getConnection("jdbc:mysql://XX.XX.XX.XX:XXXX/Jshop", /*user*/, /*password*/);
 			stmt = con.createStatement();
 			if (type.equals("INSERT"))
 				this.interprateQueryInsert(stmt, query);

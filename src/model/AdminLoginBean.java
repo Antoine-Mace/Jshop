@@ -13,7 +13,7 @@ public class AdminLoginBean extends BddManager {
 	private	String		right;
 	
 	/**
-	 * Boolean who permit to know if the customer is login or not
+	 * Boolean which permit to know if the customer is login or not
 	 */
 	private boolean		login = false;
 	
