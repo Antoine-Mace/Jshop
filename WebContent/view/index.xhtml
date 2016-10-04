@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <!--<p class="lead">Categories</p>-->
+                <div class="list-group">
+                    <a href="#" class="list-group-item">Men</a>
+                    <a href="#" class="list-group-item">Women</a>
+                    <a href="#" class="list-group-item">Children</a>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+
+                <div class="row carousel-holder">
+
+                    <div class="col-md-12">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner" style="height: 300px;">
+                                <div class="item active">
+                                    <img class="slide-image" src="http://www.panerai.com/images/prodotti/collezione/historic/luminor/luminor_base/PAM00219/thumb/PAM_00219-ponte-alzato.jpg" alt=""/>
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="http://www.jbhudson.com/wp-content/uploads/2014/06/cartier_banner.jpg" alt=""/>
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="http://www.greenpowerup.com/wp-content/uploads/2012/10/TAG_HEUER_-_Aquaracer_2013_Presse_release_evolution.jpg" alt=""/>
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                	<h3 style="margin-left: 15px; text-align: center;">What's new on TekYourWatch ?</h3><hr/>
+  					<c:forEach items="#{indexBean.lastProduct}" var="product">
+	                   	<div class="col-sm-4 col-lg-4 col-md-4">
+	                        <div class="thumbnail">
+	                        	<div style="height: 150px; position: relative; overflow: hidden;">
+    								<h:graphicImage value="#{product.picturePath}" />
+    							</div>
+	                            <div class="caption">
+	                                <h4 class="pull-right"><h:outputText value="#{product.price}"/> €</h4>
+	                                <h4>
+	                                	<h:form>
+	                                    	<h:commandLink action="#{productPageBean.initProductPage(product.id)}">
+	                                    		<h:outputText value="#{product.name}"/>
+	                                		</h:commandLink>
+	                                	</h:form>
+	                                </h4>
+	                                <h:form>
+	                               		<h:commandButton class="btn btn-primary" action="#{cartBean.addToCart(product.id)}" value="Add To Cart" />
+	                               	</h:form>
+	                            </div>
+	                            <div class="ratings">
+	                                <p class="pull-right">18 reviews</p>
+	                                <p>
+	                                    <span class="glyphicon glyphicon-star"></span>
+	                                    <span class="glyphicon glyphicon-star"></span>
+	                                    <span class="glyphicon glyphicon-star"></span>
+	                                    <span class="glyphicon glyphicon-star"></span>
+	                                    <span class="glyphicon glyphicon-star-empty"></span>
+	                                </p>
+	                            </div>
+	                        </div>
+	                    </div>
+                   </c:forEach>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    </ui:define>
+</ui:composition>
+</html>

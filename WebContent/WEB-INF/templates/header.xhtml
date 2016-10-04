@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<body>
+<div id="gears">
+    <img class="gear_md" id="gear1" src="../../img/cog-steel-1.png" />
+    
+    <img class="gear_md" id="gear2" src="../../img/cog-steel-2.png" />
+    
+    <img class="gear_md" id="gear3" src="../../img/cog-steel-2.png" />
+</div>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.xhtml">
+                	TekYourWatch
+                    <h:outputText style="font-size: 15px; display: inline-block;" value="#{loginBean.firstName}" />
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            	<h:form rendered="#{loginBean.login}">
+				<ul class="nav navbar-nav navbar-right">
+						<li>
+	                        <a href="#">MY ACCOUNT</a>
+	                    </li>
+	                    <li>
+		                	<a href="cart.xhtml">CART</a>
+		            	</li>
+	                   	<li>
+	                        <a href="#">WISHLIST</a>
+	                    </li>
+	                    <li>
+	                       <h:commandLink class="menu" action="#{loginBean.logOut}" >LOGOUT</h:commandLink>
+	                    </li>
+	              </ul>
+	              </h:form>
+	              <h:form rendered="#{!loginBean.login}">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+		                	<a href="cart.xhtml">CART</a>
+		            	</li>
+	                    <li>
+	                        <a href="login.xhtml">LOGIN</a>
+	                    </li>
+						 <li>
+	                        <a href="signup.xhtml">SIGN UP</a>
+	                    </li>
+	           		 </ul>
+	           		</h:form>
+	      	</div>
+        </div>
+    </nav>
+</body>
+</html>

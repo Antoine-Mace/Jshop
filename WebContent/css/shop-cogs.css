@@ -1,0 +1,26 @@
+ /* Gears */
+#gears {
+    position: fixed;
+	left: 0px;
+	top: 0px;
+}
+
+.gear_md {
+    position: absolute;
+    width: 100%;
+ }
+ 
+#gear1 {
+    top: 0px;
+    left: -200px;
+}
+ 
+#gear2 {
+    top: 510px;
+    left: 0px;
+}
+
+#gear3 {
+    top: -130px;
+    left: 220px;
+}

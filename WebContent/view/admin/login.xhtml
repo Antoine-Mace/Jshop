@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+	<head>
+	
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	    <meta name="description" content=""/>
+	    <meta name="author" content=""/>
+	
+	    <title>AdminInterface - TekYourWatch</title>
+	    
+	    <link href="../../../css/bootstrap.min.css" rel="stylesheet"/>
+	    <link href="../../../css/admin.css" rel="stylesheet"/>
+	 
+	</head>
+	
+	<body style="background-image: url('../../img/bg-2.png');">
+   		<div class="container">
+            <div class="col-md-12">
+            	<h:form class="form-horizontal">
+		    		<fieldset>	            
+					<!-- Form Name -->
+					<legend style="text-align: center;">Login</legend>
+
+					<!-- Prepended text-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="">E-mail</label>
+					  <div class="col-md-5">
+					    <div class="input-group">
+					      <span class="input-group-addon"></span>
+					  		<h:inputText value="#{adminLoginBean.email}" class="form-control" placeholder="john.doe@gmail.com" type="text" required="true"/>
+					    </div>
+					  </div>
+					</div>
+					
+					<!-- Password input-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="">Password</label>
+					  <div class="col-md-4">
+					 	<h:inputSecret value="#{adminLoginBean.password}" class="form-control" type="password" required="true"/>
+					  </div>
+					</div>
+
+					<!-- Button -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for=""></label>
+					  <div class="col-md-4">
+					  	 <h:commandButton class="btn btn-primary" value="Login" action="#{adminLoginBean.submitForm}"/>
+					  </div>
+					</div>
+				</fieldset>
+		       </h:form>
+		   	</div>
+	 	</div>
+	 </body>
+</html>

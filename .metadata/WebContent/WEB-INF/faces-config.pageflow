@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14188363609314" configfile="/JWeb-SAVE/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="view/index.xhtml" x="275" y="329" id="pf14190948126130" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14192138921924" inlinks="pf14190948126131" path="/view/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="view/login.xhtml" x="564" y="329" id="pf14190948126132" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf14190948126131" inlinks="pf14190956975103" path="/view/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="view/signup.xhtml" x="560" y="108" id="pf14190956975104" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14190956975103" path="/view/signup.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="view/product.xhtml" x="268" y="108" id="pf14192138921935" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14192138921924 pf14192500593106" path="/view/product.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="view/cart.xhtml" x="72" y="108" id="pf14192500593107" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14192500593106" path="/view/cart.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="view/admin/index.xhtml" x="102" y="492" id="pf14195038329710" inlinks="pf14195038329711" path="/view/admin/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="view/admin/login.xhtml" x="433" y="492" id="pf14195038329712" outlinks="pf14195038329711" path="/view/admin/login.xhtml"/>
+  <links id="pf14190948126131" target="pf14190948126130" source="pf14190948126132" outcome="Success" redirect="true" fromaction="#{loginBean.submitForm}"/>
+  <links id="pf14190956975103" target="pf14190948126132" source="pf14190956975104" outcome="Success" redirect="true" fromaction="#{signUpBean.submitForm}"/>
+  <links id="pf14192138921924" target="pf14192138921935" source="pf14190948126130" outcome="ProductPage" redirect="true"/>
+  <links id="pf14192500593106" target="pf14192138921935" source="pf14192500593107" outcome="ProductPage" redirect="true"/>
+  <links id="pf14195038329711" target="pf14195038329710" source="pf14195038329712" outcome="Sucess" fromaction="#{adminLoginBean.submitForm}"/>
+</pageflow:Pageflow>

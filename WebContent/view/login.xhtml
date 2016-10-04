@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+   		<div class="container">
+            <div class="col-md-12">
+            	<h:form class="form-horizontal">
+		    		<fieldset>	            
+					<!-- Form Name -->
+					<legend style="text-align: center;">Login</legend>
+
+					<!-- Prepended text-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="">E-mail</label>
+					  <div class="col-md-5">
+					    <div class="input-group">
+					      <span class="input-group-addon"></span>
+					  		<h:inputText value="#{loginBean.email}" class="form-control" placeholder="john.doe@gmail.com" type="text" required="true"/>
+					    </div>
+					  </div>
+					</div>
+					
+					<!-- Password input-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="">Password</label>
+					  <div class="col-md-4">
+					 	<h:inputSecret value="#{loginBean.password}" class="form-control" type="password" required="true"/>
+					  </div>
+					</div>
+
+					<!-- Button -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for=""></label>
+					  <div class="col-md-4">
+					  	 <h:commandButton lass="btn btn-primary" value="Login" action="#{loginBean.submitForm}"/>
+					  </div>
+					</div>
+				</fieldset>
+		       </h:form>
+		   	</div>
+	 	</div>
+    </ui:define>
+</ui:composition>
+</html>

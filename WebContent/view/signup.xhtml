@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+    
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+   		<div class="container">
+            <div class="col-md-12">
+		    	<h:form class="form-horizontal">
+		    		<fieldset>	            
+					<!-- Form Name -->
+					<legend style="text-align: center;">Sign Up</legend>
+					
+					<!-- Prepended text-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="">First Name</label>
+					  <div class="col-md-4">
+					    <div class="input-group">
+					      <span class="input-group-addon"></span>
+                			<h:inputText value="#{signUpBean.firstName}" class="form-control" placeholder="John" type="text" required="True"/>
+                		</div>
+					  </div>
+					</div>
+					
+					<!-- Prepended text-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="">Last Name</label>
+					  <div class="col-md-4">
+					    <div class="input-group">
+					      <span class="input-group-addon"></span>
+					        <h:inputText value="#{signUpBean.lastName}" class="form-control" placeholder="Doe" type="text" required="True"/>
+					    </div>
+					  </div>
+					</div>
+					
+					<!-- Prepended text-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="">E-mail</label>
+					  <div class="col-md-5">
+					    <div class="input-group">
+					      <span class="input-group-addon"></span>
+					  		<h:inputText value="#{signUpBean.email}" id="mail" class="form-control" placeholder="john.doe@gmail.com" type="text" required="True"/>
+					  		<h:outputText rendered="#{signUpBean.exist}" value="Email already exist" style="color:red"/>
+					    </div>
+					  </div>
+					</div>
+					
+					
+					<f:event listener="#{signUpBean.validatePassword}" type="postValidate" />				
+					<!-- Password input-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="">Password</label>
+					  <div class="col-md-4">
+					 	<h:outputLabel for="password"/>
+					 	<h:inputSecret id="password" value="#{signUpBean.password}" class="form-control" type="password" required="True" requiredMessage="Please enter your Password"/>
+						<h:message for="password" style="color: red;" />		 
+					  </div>
+					</div>
+					
+					<!-- Password input-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="passwordinput">Confirm Password</label>
+					  <div class="col-md-4">
+					  	<h:outputLabel for="confirmPassword"/>
+					 	<h:inputSecret id="confirmPassword" value="#{signUpBean.password}" class="form-control" type="password" required="True" requiredMessage="Please enter confirm password" />
+						<h:message for="confirmPassword" style="color: red;" />
+					  </div>
+					</div>
+					
+					<!-- Prepended text-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="">Adress</label>
+					  <div class="col-md-6">
+					    <div class="input-group">
+					      <span class="input-group-addon"></span>
+					      		<h:inputText value="#{signUpBean.adress}" class="form-control" placeholder="john.doe@gmail.com" type="text" required="True"/>
+					      </div>
+					  </div>
+					</div>
+					
+					<!-- Prepended text-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="">City</label>
+					  <div class="col-md-4">
+					    <div class="input-group">
+					      <span class="input-group-addon"></span>
+					        	<h:inputText value="#{signUpBean.city}" class="form-control" placeholder="Le Kremlin-Bicetre" type="text" required="True"/>
+					    </div>
+					  </div>
+					</div>
+					
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="">Country</label>
+					  <div class="col-md-4">
+					    <div class="input-group">
+					      <span class="input-group-addon"></span>
+					        	<h:inputText value="#{signUpBean.country}" class="form-control" placeholder="Le Kremlin-Bicetre" type="text" required="True"/>
+					    </div>
+					  </div>
+					</div>
+					
+					<!-- Prepended text-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="">Zip Code</label>
+					  <div class="col-md-2">
+					    <div class="input-group">
+					      <span class="input-group-addon"></span>
+					          <h:inputText value="#{signUpBean.zip}" class="form-control" placeholder="94270" type="text" required="True"/>
+					    </div>
+					  </div>
+					</div>
+					
+					<!-- Prepended text-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="">Phone Number</label>
+					  <div class="col-md-3">
+					    <div class="input-group">
+					      <span class="input-group-addon"></span>
+					       <h:inputText value="#{signUpBean.phone}" class="form-control" placeholder="0643209090" type="text" required="True"/>
+					    </div>
+					  </div>
+					</div>
+					
+					<!-- Multiple Checkboxes (inline) -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for=""></label>
+					  <div class="col-md-4">
+					    <label class="checkbox-inline" for="">
+					      <h:selectBooleanCheckbox value="#{signUpBean.news}"/>
+					      Newsletter
+					    </label>
+					  </div>
+					</div>
+					
+					<!-- Button -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for=""></label>
+					  <div class="col-md-4">
+					  	 <h:commandButton class="btn btn-primary" value="Submit Your Registration" action="#{signUpBean.submitForm}"/>	
+					  </div>
+					</div>
+					
+				</fieldset>
+		       </h:form>
+		   	</div>
+	 	</div>
+    </ui:define>
+</ui:composition>
+</html>

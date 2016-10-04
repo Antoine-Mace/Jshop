@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+	<managed-bean>
+		<managed-bean-name>signUpBean</managed-bean-name>
+		<managed-bean-class>model.SignUpBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>cartBean</managed-bean-name>
+		<managed-bean-class>model.CartBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>productBean</managed-bean-name>
+		<managed-bean-class>model.ProductBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>loginBean</managed-bean-name>
+		<managed-bean-class>model.LoginBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>indexBean</managed-bean-name>
+		<managed-bean-class>model.IndexBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>productPageBean</managed-bean-name>
+		<managed-bean-class>model.ProductPageBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>adminLoginBean</managed-bean-name>
+		<managed-bean-class>model.AdminLoginBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<display-name>view/login.xhtml</display-name>
+		<from-view-id>/view/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{loginBean.submitForm}</from-action>
+			<from-outcome>Success</from-outcome>
+			<to-view-id>/view/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>view/signup.xhtml</display-name>
+		<from-view-id>/view/signup.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{signUpBean.submitForm}</from-action>
+			<from-outcome>Success</from-outcome>
+			<to-view-id>/view/login.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>view/index.xhtml</display-name>
+		<from-view-id>/view/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>ProductPage</from-outcome>
+			<to-view-id>/view/product.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>view/cart.xhtml</display-name>
+		<from-view-id>/view/cart.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>ProductPage</from-outcome>
+			<to-view-id>/view/product.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>view/admin/login.xhtml</display-name>
+		<from-view-id>/view/admin/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{adminLoginBean.submitForm}</from-action>
+			<from-outcome>Sucess</from-outcome>
+			<to-view-id>/view/admin/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>
