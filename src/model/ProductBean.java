@@ -39,7 +39,7 @@ public class				ProductBean extends BddManager {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			con = DriverManager.getConnection("jdbc:mysql://62.210.238.5:3306/JWeb", "root", "22121994");
+			con = DriverManager.getConnection("jdbc:mysql://XX.XX.XX.XX:XXXX/Jshop", /*user*/, /*password*/);
 			stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
 			while (rs.next())
